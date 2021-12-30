@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">574469502347-c9v1ds5g5qpsr8hkc8g5dgmga4hfv7v1.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">574469502347</string>
+    <string name="google_api_key" translatable="false">AIzaSyDexzIaFpcxJ6UCM9Sf72EFb8OarZID8K4</string>
+    <string name="google_app_id" translatable="false">1:574469502347:android:26b8828a25a2180822eb8e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDexzIaFpcxJ6UCM9Sf72EFb8OarZID8K4</string>
+    <string name="google_storage_bucket" translatable="false">fireauth-b76d7.appspot.com</string>
+    <string name="project_id" translatable="false">fireauth-b76d7</string>
+</resources>
