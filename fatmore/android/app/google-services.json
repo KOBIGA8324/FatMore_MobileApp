@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "574469502347",
+    "project_id": "fireauth-b76d7",
+    "storage_bucket": "fireauth-b76d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574469502347:android:26b8828a25a2180822eb8e",
+        "android_client_info": {
+          "package_name": "com.example.fatmore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574469502347-529i5l12smtu52ff0dujuk3e09hm1v0g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fatmore",
+            "certificate_hash": "d1d2305eda683bdaa0e650b209cce2cc35cb0d20"
+          }
+        },
+        {
+          "client_id": "574469502347-c9v1ds5g5qpsr8hkc8g5dgmga4hfv7v1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDexzIaFpcxJ6UCM9Sf72EFb8OarZID8K4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574469502347-c9v1ds5g5qpsr8hkc8g5dgmga4hfv7v1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
