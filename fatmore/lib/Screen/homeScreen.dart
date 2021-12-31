@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'details.dart';
+import 'login.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -291,6 +292,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // bool isActive = true;
     foodProvider = Provider.of(
       context,
     );
@@ -303,18 +305,29 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: Container(
           padding: EdgeInsets.all(6.0),
           height: 50,
-          width: 50,
+          width: 60,
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.deepOrangeAccent.withOpacity(0.26)),
           child: Container(
-              padding: EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(4.0),
               decoration: const BoxDecoration(
                   shape: BoxShape.circle, color: Colors.deepOrangeAccent),
-              child: Image.asset(
-                "asset/images/plus.png",
+              child: IconButton(
                 color: Colors.black,
+                icon: Icon(
+                  Icons.exit_to_app_outlined,
+                  size: 18,
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                },
               ))),
+      // child: Image.asset(
+      //   "asset/images/plus.png",
+      //   color: Colors.black,
+      // ))),
       body: Container(
         child: ListView(
           // crossAxisAlignment: CrossAxisAlignment.start,
@@ -354,10 +367,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: <Widget>[
                   CategoryTitle(
                     title: "All",
-                    actrive: true,
+                    active: true,
                   ),
                   CategoryTitle(
                     title: "Breakfast",
+                    active: false,
                   ),
                   CategoryTitle(
                     title: "Lunch",

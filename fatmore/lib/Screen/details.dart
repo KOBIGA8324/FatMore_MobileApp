@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fatmore/Providers/wishListProvider.dart';
 import 'package:fatmore/Screen/review_cart.dart';
+import 'package:fatmore/Widget/drawerSide.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -32,7 +33,9 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
-  Widget bonntonNavigatorBar({
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  Widget bottomNavigatorBar({
     required Color iconColor,
     required Color backgroundColor,
     required Color color,
@@ -55,11 +58,17 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 color: iconColor,
               ),
               SizedBox(
-                width: 5,
+                width: 8,
               ),
               Text(
                 title,
-                style: TextStyle(color: color),
+                style: TextStyle(
+                  color: color,
+                  fontWeight: FontWeight.normal,
+                  fontFamily: "Poppins_Bold",
+                  fontSize: 12,
+                  letterSpacing: 0.5,
+                ),
               ),
             ],
           ),
@@ -103,9 +112,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
     WishListProvider wishListProvider = Provider.of(context);
     getWishtListBool();
     return Scaffold(
+      key: _scaffoldKey,
+      endDrawer: DrawerSide(),
       bottomNavigationBar: Row(
         children: [
-          bonntonNavigatorBar(
+          bottomNavigatorBar(
               backgroundColor: Colors.black,
               color: Colors.deepOrange,
               iconColor: Colors.deepOrange,
@@ -131,7 +142,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               }
               // }
               ),
-          bonntonNavigatorBar(
+          bottomNavigatorBar(
               backgroundColor: Colors.deepOrange,
               color: Colors.black,
               iconColor: Colors.black,
@@ -148,26 +159,39 @@ class _DetailsScreenState extends State<DetailsScreen> {
       ),
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.only(right: 20, top: 40),
+        padding: const EdgeInsets.only(right: 20, top: 30),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => HomeScreen()));
-                  },
-                  child: Icon(
-                    Icons.arrow_back,
+                IconButton(
                     color: Colors.black,
-                  ),
-                ),
-                Icon(
-                  Icons.menu,
-                  color: Colors.black,
-                ),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => HomeScreen()));
+                    },
+                    icon: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: const Icon(
+                        Icons.arrow_back_ios,
+                        size: 20,
+                        color: Colors.black,
+                      ),
+                    )),
+                IconButton(
+                    color: Colors.black,
+                    onPressed: () {
+                      _scaffoldKey.currentState?.openEndDrawer();
+                    },
+                    icon: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: const Icon(
+                        Icons.menu,
+                        size: 20,
+                        color: Colors.black,
+                      ),
+                    ))
               ],
             ),
             Container(
@@ -245,7 +269,19 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     letterSpacing: 0.44),
               ),
             ),
-            Spacer(),
+            SizedBox(
+              height: 20,
+            ),
+            // Padding(
+            //   padding: EdgeInsets.only(left: 70.0),
+            //   child: Count(
+            //     foodName: widget.foodName,
+            //     // foodQuantity: '1',
+            //     foodId: widget.foodId,
+            //     price: widget.price,
+            //     foodImage: widget.foodImage, //foodQuantity: widget.,
+            //   ),
+            // ),
             /*Padding(
               padding: const EdgeInsets.only(bottom: 20.0),
               child: Padding(

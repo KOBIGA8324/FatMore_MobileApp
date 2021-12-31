@@ -68,19 +68,19 @@ class _ContactUsState extends State<ContactUs> {
             color: Colors.black,
           ),
         ),
-        centerTitle: true,
+        // centerTitle: true,
         backgroundColor: Colors.white,
         title: Text(
-          "Contact",
+          "Contact Us",
           style: TextStyle(
-              color: Colors.deepOrange,
+              color: Colors.black,
               fontFamily: "Poppins-Bold",
               fontSize: 20,
               fontWeight: FontWeight.bold),
         ),
       ),
       body: Container(
-        padding: EdgeInsets.only(left: 10, right: 10, top: 40),
+        padding: EdgeInsets.only(left: 10, right: 10, top: 50),
         child: Column(
           children: [
             Expanded(
@@ -88,6 +88,13 @@ class _ContactUsState extends State<ContactUs> {
                 child: Column(
                   children: [
                     TextFormField(
+                      style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontFamily: "Poppins Regular",
+                        fontSize: 13,
+                        letterSpacing: 1.0,
+                        color: Colors.black,
+                      ),
                       controller: fullname,
                       decoration: InputDecoration(
                         fillColor: Colors.deepOrange.shade100,
@@ -103,6 +110,13 @@ class _ContactUsState extends State<ContactUs> {
                       height: 20,
                     ),
                     TextFormField(
+                      style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontFamily: "Poppins Regular",
+                        fontSize: 13,
+                        letterSpacing: 1.0,
+                        color: Colors.black,
+                      ),
                       controller: email,
                       decoration: InputDecoration(
                         fillColor: Colors.deepOrange.shade100,
@@ -118,6 +132,13 @@ class _ContactUsState extends State<ContactUs> {
                       height: 20,
                     ),
                     TextFormField(
+                      style: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontFamily: "Poppins Regular",
+                        fontSize: 13,
+                        letterSpacing: 1.0,
+                        color: Colors.black,
+                      ),
                       controller: message,
                       decoration: InputDecoration(
                         fillColor: Colors.deepOrange.shade100,
@@ -139,9 +160,9 @@ class _ContactUsState extends State<ContactUs> {
                       child: const Text(
                         'Submit',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 20,
-                            fontFamily: 'Roboto',
+                            fontFamily: "Poppins Regular",
                             fontStyle: FontStyle.normal,
                             letterSpacing: 2.5,
                             fontWeight: FontWeight.bold),

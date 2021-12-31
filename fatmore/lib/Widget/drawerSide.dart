@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fatmore/DatabaseManager/databaseManager.dart';
 import 'package:fatmore/Screen/about.dart';
 import 'package:fatmore/Screen/contact.dart';
 import 'package:fatmore/Screen/homeScreen.dart';
@@ -32,10 +32,14 @@ class _DrawerSideState extends State<DrawerSide> {
           size: 28,
           color: Colors.deepOrange,
         ),
-        title: Text(
-          title,
-          style: TextStyle(color: Colors.black),
-        ),
+        title: Text(title,
+            style: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontFamily: "Poppins Regular",
+              fontSize: 14,
+              letterSpacing: 1.0,
+              color: Colors.black,
+            )),
       ),
     );
   }
@@ -66,32 +70,30 @@ class _DrawerSideState extends State<DrawerSide> {
   //     print("something went wrong");
   //   }
   // }
-  Widget userData(context) {
-    return StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection("usersData").snapshots(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (!snapshot.hasData) return Text("Loading data");
-          return Padding(
-            padding: const EdgeInsets.only(top: 90.0, left: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(snapshot.data!.docs[0]['userName']),
-                Text(snapshot.data!.docs[0]['userEmail'].toString())
-              ],
-            ),
-          );
-        });
-  }
+  // Widget userData(context) {
+  //   return StreamBuilder<QuerySnapshot>(
+  //       stream: FirebaseFirestore.instance.collection("usersData").snapshots(),
+  //       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+  //         if (!snapshot.hasData) return Text("Loading data");
+  //         return Padding(
+  //           padding: const EdgeInsets.only(top: 90.0, left: 20),
+  //           child: Column(
+  //             crossAxisAlignment: CrossAxisAlignment.start,
+  //             children: <Widget>[
+  //               Text(snapshot.data!.docs[0]['userName']),
+  //               Text(snapshot.data!.docs[0]['userEmail'].toString())
+  //             ],
+  //           ),
+  //         );
+  //       });
+  // }
 
   @override
   Widget build(BuildContext context) {
-    // var userData = widget.userProvider.currentUserData;
-
     return Drawer(
-      //  backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
       child: Container(
-        color: Colors.deepOrange.shade300,
+        // color: Colors.deepOrange.shade200,
         child: ListView(
           children: [
             DrawerHeader(
@@ -106,11 +108,12 @@ class _DrawerSideState extends State<DrawerSide> {
                     child: CircleAvatar(
                         radius: 40,
                         backgroundColor: Colors.white54,
-                        backgroundImage: AssetImage("asset/images/food6.jpg")),
+                        backgroundImage: AssetImage("asset/images/user1.png")),
                   ),
                 ),
                 Container(
-                  child: userData(context),
+                  padding: EdgeInsets.only(top: 80, left: 30),
+                  child: DatabaseManager(),
                 ),
               ]),
             )),
@@ -191,17 +194,40 @@ class _DrawerSideState extends State<DrawerSide> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Connect with us"),
+                  Text(
+                    "Connect with us",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Poppins_Bold",
+                      fontSize: 14,
+                      letterSpacing: 1.0,
+                      color: Colors.deepOrange.shade200,
+                    ),
+                  ),
                   SizedBox(
                     height: 10,
                   ),
                   Row(
                     children: [
-                      Text("call :"),
+                      Text("call :",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "Poppins_Bold",
+                            fontSize: 12,
+                            letterSpacing: 1.0,
+                            color: Colors.black,
+                          )),
                       SizedBox(
                         width: 10,
                       ),
-                      Text("+94773556342"),
+                      Text("+94773556342",
+                          style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                            fontFamily: "Poppins_Bold",
+                            fontSize: 12,
+                            letterSpacing: 1.0,
+                            color: Colors.black,
+                          )),
                     ],
                   ),
                   SizedBox(
@@ -211,11 +237,25 @@ class _DrawerSideState extends State<DrawerSide> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        Text("mail :"),
+                        Text("mail :",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Poppins_Bold",
+                              fontSize: 12,
+                              letterSpacing: 1.0,
+                              color: Colors.black,
+                            )),
                         SizedBox(
                           width: 10,
                         ),
-                        Text("Kuna@gmail.com"),
+                        Text("Kuna@gmail.com",
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontFamily: "Poppins_Bold",
+                              fontSize: 12,
+                              letterSpacing: 1.0,
+                              color: Colors.black,
+                            )),
                       ],
                     ),
                   )

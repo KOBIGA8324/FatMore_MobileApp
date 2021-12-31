@@ -1,6 +1,7 @@
 import 'package:fatmore/Providers/review_cart_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
 import 'count.dart';
@@ -82,15 +83,20 @@ class _SingleItem1State extends State<SingleItem1> {
                           Text(
                             widget.foodName,
                             style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16),
+                              color: Colors.deepOrange.shade400,
+                              fontFamily: "Poppins_Bold",
+                              fontSize: 13,
+                              letterSpacing: 1.0,
+                            ),
                           ),
                           Text(
                             "${widget.price}\$",
                             style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
+                              color: Colors.black,
+                              fontFamily: "Poppins_Bold",
+                              fontSize: 13,
+                              letterSpacing: 1.0,
+                            ),
                           ),
                         ],
                       ),
@@ -155,7 +161,14 @@ class _SingleItem1State extends State<SingleItem1> {
                               //   ),
                               // ),
                               )
-                          : Text("${widget.foodQuantity}")
+                          : Text(
+                              "${widget.foodQuantity}",
+                              style: TextStyle(
+                                  fontFamily: "Poppins_Bold",
+                                  fontSize: 14,
+                                  letterSpacing: 1.0,
+                                  color: Colors.black38),
+                            )
                     ],
                   ),
                 ),
@@ -181,7 +194,7 @@ class _SingleItem1State extends State<SingleItem1> {
                                 onTap: widget.onDelete,
                                 child: Icon(
                                   Icons.delete,
-                                  size: 30,
+                                  size: 25,
                                   color: Colors.black54,
                                 ),
                               ),
@@ -193,7 +206,8 @@ class _SingleItem1State extends State<SingleItem1> {
                                       height: 25,
                                       width: 70,
                                       decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.grey),
+                                        border: Border.all(
+                                            color: Colors.deepOrange),
                                         borderRadius: BorderRadius.circular(30),
                                       ),
                                       child: Center(
@@ -204,11 +218,10 @@ class _SingleItem1State extends State<SingleItem1> {
                                             InkWell(
                                               onTap: () {
                                                 if (count == 1) {
-                                                  //Fluttertoast.showToast(
-                                                  //  msg:
-                                                  //  "You reach minimum limit",
-
-                                                  // );
+                                                  Fluttertoast.showToast(
+                                                    msg:
+                                                        "You reach minimum limit",
+                                                  );
                                                 } else {
                                                   setState(() {
                                                     count--;
@@ -233,6 +246,9 @@ class _SingleItem1State extends State<SingleItem1> {
                                               "$count",
                                               style: TextStyle(
                                                 color: Colors.black,
+                                                fontFamily: "Poppins_Bold",
+                                                fontSize: 13,
+                                                letterSpacing: 1.0,
                                               ),
                                             ),
                                             InkWell(
@@ -262,7 +278,11 @@ class _SingleItem1State extends State<SingleItem1> {
                                         ),
                                       ),
                                     )
-                                  : Container(),
+                                  : Container(
+                                      child: SizedBox(
+                                        height: 5,
+                                      ),
+                                    ),
                             ],
                           ),
                         ),
@@ -271,10 +291,17 @@ class _SingleItem1State extends State<SingleItem1> {
             ],
           ),
         ),
+        SizedBox(
+          height: 8,
+        ),
         widget.isBool == false
-            ? Container()
+            ? Container(
+                child: SizedBox(
+                  height: 5,
+                ),
+              )
             : Divider(
-                height: 1,
+                height: 4,
                 color: Colors.black45,
               )
       ],

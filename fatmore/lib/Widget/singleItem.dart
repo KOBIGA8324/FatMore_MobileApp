@@ -53,31 +53,31 @@ class _SingleItemsState extends State<SingleItems> {
                           Text("${widget.price}\$"),
                         ],
                       ),
-                      widget.isBool == false
-                          ? Container(
-                              margin: EdgeInsets.only(right: 10),
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              height: 35,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Row(
-                                children: [
-                                  Expanded(
-                                    child: Text(
-                                      "+1",
-                                      style: TextStyle(
-                                          color: Colors.grey, fontSize: 14),
-                                    ),
-                                  ),
-                                  Center(
-                                    child: Icon(Icons.arrow_drop_down),
-                                  )
-                                ],
-                              ),
-                            )
-                          : Text("+1"),
+                      // widget.isBool == false
+                      //     ? Container(
+                      //         margin: EdgeInsets.only(right: 10),
+                      //         padding: EdgeInsets.symmetric(horizontal: 10),
+                      //         height: 35,
+                      //         decoration: BoxDecoration(
+                      //           border: Border.all(color: Colors.grey),
+                      //           borderRadius: BorderRadius.circular(20),
+                      //         ),
+                      //         child: Row(
+                      //           children: [
+                      //             Expanded(
+                      //               child: Text(
+                      //                 "+1",
+                      //                 style: TextStyle(
+                      //                     color: Colors.grey, fontSize: 14),
+                      //               ),
+                      //             ),
+                      //             Center(
+                      //               child: Icon(Icons.arrow_drop_down),
+                      //             )
+                      //           ],
+                      //         ),
+                      //       )
+                      //     : Text("+1"),
                     ],
                   ),
                 ),

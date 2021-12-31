@@ -3,6 +3,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'Providers/BreakfastProvider.dart';
+import 'Providers/checkoutProvider.dart';
 import 'Providers/review_cart_provider.dart';
 import 'Providers/userProvider.dart';
 import 'Providers/wishListProvider.dart';
@@ -35,10 +37,13 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<WishListProvider>(
           create: (context) => WishListProvider(),
-        ), /*
+        ),
         ChangeNotifierProvider<CheckoutProvider>(
-          create: (context) => CheckoutProvider(),*
-        ),*/
+          create: (context) => CheckoutProvider(),
+        ),
+        ChangeNotifierProvider<BreakfastFoodProvider>(
+          create: (context) => BreakfastFoodProvider(),
+        ),
       ],
       child: MaterialApp(home: HomeScreen(), debugShowCheckedModeBanner: false),
     ); // define it once at root level.

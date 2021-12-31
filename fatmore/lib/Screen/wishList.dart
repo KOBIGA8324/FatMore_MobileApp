@@ -20,13 +20,27 @@ class _WishListState extends State<WishList> {
   showAlertDialog(BuildContext context, WishListModel delete) {
     // set up the buttons
     Widget cancelButton = FlatButton(
-      child: Text("No"),
+      child: Text(
+        "No",
+        style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: "Poppins_Bold",
+            fontSize: 15,
+            letterSpacing: 1.0),
+      ),
       onPressed: () {
         Navigator.of(context).pop();
       },
     );
     Widget continueButton = FlatButton(
-      child: Text("Yes"),
+      child: Text(
+        "Yes",
+        style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: "Poppins_Bold",
+            fontSize: 15,
+            letterSpacing: 1.0),
+      ),
       onPressed: () {
         wishListProvider.wishListDataDelete(delete.wishFoodId);
         //wishListProvider.wishListDataDelete(delete.wishFoodId);
@@ -36,8 +50,23 @@ class _WishListState extends State<WishList> {
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      title: Text("Cart Product"),
-      content: Text("Are you delete on cartProduct?"),
+      title: Text(
+        "Cart Product",
+        style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: "Poppins_Bold",
+            fontSize: 18,
+            color: Colors.deepOrange,
+            letterSpacing: 1.0),
+      ),
+      content: Text(
+        "Are you delete on cartProduct?",
+        style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: "Poppins_Bold",
+            fontSize: 16,
+            letterSpacing: 1.0),
+      ),
       actions: [
         cancelButton,
         continueButton,
@@ -69,7 +98,17 @@ class _WishListState extends State<WishList> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text("WishList"),
+        elevation: 0.0,
+        backgroundColor: Colors.white,
+        title: Text(
+          "WishList",
+          style: TextStyle(
+              fontWeight: FontWeight.normal,
+              fontFamily: "Poppins_Bold",
+              fontSize: 18,
+              letterSpacing: 1.0,
+              color: Colors.black),
+        ),
         leading: IconButton(
           onPressed: () {
             Navigator.push(
@@ -83,7 +122,15 @@ class _WishListState extends State<WishList> {
       ),
       body: wishListProvider.getWishList.isEmpty
           ? Center(
-              child: Text("NO DATA"),
+              child: Text(
+                "NO DATA",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Poppins_Bold",
+                    fontSize: 14,
+                    letterSpacing: 1.0,
+                    color: Colors.deepOrange),
+              ),
             )
           : ListView.builder(
               itemCount: wishListProvider.getWishList.length,

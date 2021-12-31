@@ -1,6 +1,12 @@
+import 'package:fatmore/CheckOut/AddDeliveryDetails/addDelivery_addreese.dart';
+import 'package:fatmore/DatabaseManager/databaseManager.dart';
+import 'package:fatmore/Screen/review_cart.dart';
 import 'package:fatmore/Widget/drawerSide.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'homeScreen.dart';
+import 'login.dart';
 
 class Profile extends StatefulWidget {
   // late UserProvider userProvider;
@@ -12,14 +18,18 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   //const Profile({Key? key}) : super(key: key);
-  Widget listTile(IconData icon, String title) {
+  Widget listTile(
+      {required String title,
+      required IconData iconData,
+      required VoidCallback onTap}) {
     return Column(
       children: [
         Divider(
           height: 1,
         ),
         ListTile(
-          leading: Icon(icon),
+          onTap: onTap,
+          leading: Icon(iconData),
           title: Text(title),
           trailing: Icon(Icons.arrow_forward_ios),
         )
@@ -34,6 +44,16 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       backgroundColor: Colors.deepOrange.shade300,
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (_) => HomeScreen()));
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+        ),
         //leading: Icon(Icons.menu, color: Colors.green),
         elevation: 0.0,
         backgroundColor: Colors.deepOrange.shade300,
@@ -51,6 +71,7 @@ class _ProfileState extends State<Profile> {
         ),
       ),
       endDrawer: DrawerSide(
+
           // userProvider: widget.userProvider,
           ),
       body: Stack(
@@ -88,21 +109,7 @@ class _ProfileState extends State<Profile> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    "kokok",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    "knknk",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 14),
-                                  ),
+                                  DatabaseManager(),
                                 ],
                               ),
                               CircleAvatar(
@@ -123,13 +130,54 @@ class _ProfileState extends State<Profile> {
                         )
                       ],
                     ),
-                    listTile(Icons.shop_2_outlined, "My order"),
-                    listTile(Icons.location_on_outlined, "My Delivery Address"),
-                    listTile(Icons.person_outline, "Refer A Friends"),
-                    listTile(Icons.file_copy_outlined, "Terms & Conditions"),
-                    listTile(Icons.policy_outlined, "Privacy Policy"),
-                    listTile(Icons.add_chart, "About"),
-                    listTile(Icons.exit_to_app_outlined, "Log Out"),
+                    listTile(
+                        onTap: () {
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (ctx) => HomeScreen()));
+                        },
+                        title: ("My Order"),
+                        iconData: Icons.shop_outlined),
+                    listTile(
+                        onTap: () {
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (ctx) => ReviewCart()));
+                        },
+                        title: ("My Delivery Address"),
+                        iconData: Icons.location_on_outlined),
+                    listTile(
+                        onTap: () {
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (ctx) => AddDeliveryAddress()));
+                        },
+                        title: ("Refer A Friends"),
+                        iconData: Icons.person_outline_outlined),
+                    listTile(
+                        onTap: () {
+                          // Navigator.of(context).pushReplacement(
+                          //     MaterialPageRoute(
+                          //         builder: (ctx) => HomeScreen()));
+                        },
+                        title: ("Terms & Condition"),
+                        iconData: Icons.file_copy_outlined),
+                    listTile(
+                        onTap: () {
+                          // Navigator.of(context).pushReplacement(
+                          //     MaterialPageRoute(
+                          //         builder: (ctx) => HomeScreen()));
+                        },
+                        title: ("Privacy Policy"),
+                        iconData: Icons.policy_outlined),
+                    listTile(
+                        onTap: () {
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (ctx) => LoginScreen()));
+                        },
+                        title: ("Logout"),
+                        iconData: Icons.exit_to_app_outlined),
                   ],
                 ),
               ),
@@ -143,7 +191,7 @@ class _ProfileState extends State<Profile> {
               child: CircleAvatar(
                 radius: 45,
                 backgroundColor: Colors.white,
-                backgroundImage: AssetImage("asset/images/images.png"),
+                backgroundImage: AssetImage("asset/images/user1.png"),
               ),
             ),
           )

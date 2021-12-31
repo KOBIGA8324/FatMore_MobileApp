@@ -75,80 +75,85 @@ class _SingleItemWishListState extends State<SingleItemWishList> {
                           Text(
                             widget.foodName,
                             style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16),
+                              color: Colors.deepOrange.shade400,
+                              fontFamily: "Poppins_Bold",
+                              fontSize: 13,
+                              letterSpacing: 0.5,
+                            ),
                           ),
                           Text(
                             "${widget.price}\$",
                             style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
+                              color: Colors.black,
+                              fontFamily: "Poppins_Bold",
+                              fontSize: 13,
+                              letterSpacing: 1.0,
+                            ),
                           ),
                         ],
                       ),
-                      widget.isBool == false
-                          ? GestureDetector(
-                              // onTap: () {
-                              //   showModalBottomSheet(
-                              //       context: context,
-                              //       builder: (context) {
-                              //         return Column(
-                              //           mainAxisSize: MainAxisSize.min,
-                              //           children: <Widget>[
-                              //             ListTile(
-                              //               title: new Text('1'),
-                              //               onTap: () {
-                              //                 Navigator.pop(context);
-                              //               },
-                              //             ),
-                              //             ListTile(
-                              //               title: new Text('2'),
-                              //               onTap: () {
-                              //                 Navigator.pop(context);
-                              //               },
-                              //             ),
-                              //             ListTile(
-                              //               title: new Text('3'),
-                              //               onTap: () {
-                              //                 Navigator.pop(context);
-                              //               },
-                              //             ),
-                              //           ],
-                              //         );
-                              //       });
-                              // },
-                              // child: Container(
-                              //   margin: EdgeInsets.only(right: 15),
-                              //   padding: EdgeInsets.symmetric(horizontal: 10),
-                              //   height: 35,
-                              //   decoration: BoxDecoration(
-                              //     border: Border.all(color: Colors.black),
-                              //     borderRadius: BorderRadius.circular(30),
-                              //   ),
-                              //   child: Row(
-                              //     children: [
-                              //       Expanded(
-                              //         child: Text(
-                              //           "1",
-                              //           style: TextStyle(
-                              //             color: Colors.grey,
-                              //             fontSize: 14,
-                              //           ),
-                              //         ),
-                              //       ),
-                              //       Center(
-                              //         child: Icon(
-                              //           Icons.arrow_drop_down,
-                              //           size: 20,
-                              //           color: Colors.black,
-                              //         ),
-                              //       )
-                              //     ],
-                              //   ),
-                              // ),
-                              )
-                          : Text("")
+                      // widget.isBool == false
+                      //     ? GestureDetector(
+                      // onTap: () {
+                      //   showModalBottomSheet(
+                      //       context: context,
+                      //       builder: (context) {
+                      //         return Column(
+                      //           mainAxisSize: MainAxisSize.min,
+                      //           children: <Widget>[
+                      //             ListTile(
+                      //               title: new Text('1'),
+                      //               onTap: () {
+                      //                 Navigator.pop(context);
+                      //               },
+                      //             ),
+                      //             ListTile(
+                      //               title: new Text('2'),
+                      //               onTap: () {
+                      //                 Navigator.pop(context);
+                      //               },
+                      //             ),
+                      //             ListTile(
+                      //               title: new Text('3'),
+                      //               onTap: () {
+                      //                 Navigator.pop(context);
+                      //               },
+                      //             ),
+                      //           ],
+                      //         );
+                      //       });
+                      // },
+                      // child: Container(
+                      //   margin: EdgeInsets.only(right: 15),
+                      //   padding: EdgeInsets.symmetric(horizontal: 10),
+                      //   height: 35,
+                      //   decoration: BoxDecoration(
+                      //     border: Border.all(color: Colors.black),
+                      //     borderRadius: BorderRadius.circular(30),
+                      //   ),
+                      //   child: Row(
+                      //     children: [
+                      //       Expanded(
+                      //         child: Text(
+                      //           "1",
+                      //           style: TextStyle(
+                      //             color: Colors.grey,
+                      //             fontSize: 14,
+                      //           ),
+                      //         ),
+                      //       ),
+                      //       Center(
+                      //         child: Icon(
+                      //           Icons.arrow_drop_down,
+                      //           size: 20,
+                      //           color: Colors.black,
+                      //         ),
+                      //       )
+                      //     ],
+                      //   ),
+                      // ),
+                      //     )
+                      // : Text("")
                     ],
                   ),
                 ),
@@ -189,10 +194,17 @@ class _SingleItemWishListState extends State<SingleItemWishList> {
             ],
           ),
         ),
+        SizedBox(
+          height: 8,
+        ),
         widget.isBool == false
-            ? Container()
+            ? Container(
+                child: SizedBox(
+                  height: 5,
+                ),
+              )
             : Divider(
-                height: 1,
+                height: 4,
                 color: Colors.black45,
               )
       ],

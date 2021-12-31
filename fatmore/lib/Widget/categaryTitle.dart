@@ -1,11 +1,15 @@
+import 'package:fatmore/CheckOut/deliveryDeatils.dart';
+import 'package:fatmore/Screen/homeScreen_breakfast.dart';
 import 'package:flutter/material.dart';
 
 class CategoryTitle extends StatelessWidget {
   final String title;
-  final bool actrive;
-  const CategoryTitle({
+  final bool active;
+  //final VoidCallback onTap;
+  CategoryTitle({
     Key? key,
-    this.actrive = false,
+    this.active = false,
+    //  required this.onTap,
     required this.title,
   }) : super(key: key);
 
@@ -14,11 +18,40 @@ class CategoryTitle extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 5.0, right: 10),
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          if (title == "Breakfast") {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => Breakfast(),
+              ),
+            );
+          }
+          if (title == "Lunch") {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => DeliveryDetails(),
+              ),
+            );
+          }
+          if (title == "Dinner") {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => DeliveryDetails(),
+              ),
+            );
+          }
+          if (title == "Snacks") {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => DeliveryDetails(),
+              ),
+            );
+          }
+        },
         child: Text(
           title,
           style: TextStyle(
-              color: actrive ? Colors.deepOrangeAccent : Colors.grey,
+              color: active ? Colors.deepOrangeAccent : Colors.grey,
               fontFamily: 'Roboto',
               fontStyle: FontStyle.normal,
               letterSpacing: 2.0,
