@@ -32,6 +32,7 @@ dependencies:
   firebase_core: ^1.10.6
   provider: ^6.0.1
   carousel_pro: ^1.0.0
+  fluttertoast: ^8.0.8
   #firebase_core:
 
 
@@ -96,8 +97,13 @@ flutter:
     - asset/images/images.png
     - asset/images/plus.png
     - asset/images/salad/
+    - asset/images/Breakfast/
     - asset/images/popular/
     - asset/images/Fried Rice/
+    - asset/images/location.png
+    - asset/images/end.png
+    - asset/images/user.png
+    - asset/images/user1.png
     - asset/images/skipScreen/imageslider1.jpg
     - asset/images/skipScreen/imageslider2.jpg
     - asset/images/skipScreen/imageslider3.jpg
