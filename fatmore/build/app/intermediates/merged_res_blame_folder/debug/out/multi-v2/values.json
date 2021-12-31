@@ -1,23 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Document\\Project\\fatmore\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\Document\\Project\\APP\\fatmore\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "D:\\Document\\Project\\fatmore\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "source": "D:\\Document\\Project\\APP\\fatmore\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,281,385,494,614,712",
-                        "endColumns": "143,81,103,108,119,97,74",
-                        "endOffsets": "194,276,380,489,609,707,782"
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "176,821",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "472,987"
                     },
                     "to": {
-                        "startLines": "117,118,119,120,121,122,123",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "8570,8714,8796,8900,9009,9129,9227",
-                        "endColumns": "143,81,103,108,119,97,74",
-                        "endOffsets": "8709,8791,8895,9004,9124,9222,9297"
+                        "startLines": "125,130",
+                        "startColumns": "4,4",
+                        "startOffsets": "9373,9670",
+                        "endLines": "129,132",
+                        "endColumns": "12,12",
+                        "endOffsets": "9665,9834"
                     }
                 },
                 {
@@ -52,25 +54,6 @@
                         "startOffsets": "386,444,510,573,1438,1509",
                         "endColumns": "57,65,62,61,70,71",
                         "endOffsets": "439,505,568,630,1504,1576"
-                    }
-                },
-                {
-                    "source": "D:\\Document\\Project\\fatmore\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "176,821",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "472,987"
-                    },
-                    "to": {
-                        "startLines": "125,130",
-                        "startColumns": "4,4",
-                        "startOffsets": "9373,9670",
-                        "endLines": "129,132",
-                        "endColumns": "12,12",
-                        "endOffsets": "9665,9834"
                     }
                 },
                 {
@@ -109,6 +92,23 @@
                         "endLines": "10,11,12,13,14,15,16,17,99,100,101,102,103,104,105,106,108,109,110,111,112,113,114,115,116,398,417",
                         "endColumns": "89,79,89,89,79,80,79,79,104,180,124,106,179,122,115,102,187,104,180,124,174,147,62,61,78,20,20",
                         "endOffsets": "720,800,890,980,1060,1141,1221,1301,6337,6518,6643,6750,6930,7053,7169,7272,7627,7732,7913,8038,8213,8361,8424,8486,8565,25247,25664"
+                    }
+                },
+                {
+                    "source": "D:\\Document\\Project\\APP\\fatmore\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,281,385,494,614,712",
+                        "endColumns": "143,81,103,108,119,97,74",
+                        "endOffsets": "194,276,380,489,609,707,782"
+                    },
+                    "to": {
+                        "startLines": "117,118,119,120,121,122,123",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "8570,8714,8796,8900,9009,9129,9227",
+                        "endColumns": "143,81,103,108,119,97,74",
+                        "endOffsets": "8709,8791,8895,9004,9124,9222,9297"
                     }
                 },
                 {

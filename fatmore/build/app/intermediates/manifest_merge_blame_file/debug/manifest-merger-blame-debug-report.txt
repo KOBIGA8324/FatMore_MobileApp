@@ -13,8 +13,8 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->D:\Document\Project\fatmore\android\app\src\debug\AndroidManifest.xml:7:5-66
-15-->D:\Document\Project\fatmore\android\app\src\debug\AndroidManifest.xml:7:22-64
+15-->D:\Document\Project\APP\fatmore\android\app\src\debug\AndroidManifest.xml:7:5-66
+15-->D:\Document\Project\APP\fatmore\android\app\src\debug\AndroidManifest.xml:7:22-64
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 16-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\dell\.gradle\caches\transforms-3\7ccf0c7a2af9b6d9fb85b4fd3368b18e\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:5-79
 16-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\dell\.gradle\caches\transforms-3\7ccf0c7a2af9b6d9fb85b4fd3368b18e\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:24:22-76
@@ -69,31 +69,31 @@
 58            android:value="2" />
 59
 60        <service
-60-->[:firebase_auth] D:\Document\Project\fatmore\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
+60-->[:firebase_auth] D:\Document\Project\APP\fatmore\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-12:19
 61            android:name="com.google.firebase.components.ComponentDiscoveryService"
-61-->[:firebase_auth] D:\Document\Project\fatmore\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:8:18-89
+61-->[:firebase_auth] D:\Document\Project\APP\fatmore\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:8:18-89
 62            android:directBootAware="true"
 62-->[com.google.firebase:firebase-common:20.0.0] C:\Users\dell\.gradle\caches\transforms-3\e721ef85b01e90f3e74d515bf392f294\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
 63            android:exported="false" >
 63-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\dell\.gradle\caches\transforms-3\7ccf0c7a2af9b6d9fb85b4fd3368b18e\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:76:13-37
 64            <meta-data
-64-->[:firebase_auth] D:\Document\Project\fatmore\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+64-->[:firebase_auth] D:\Document\Project\APP\fatmore\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 65                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-65-->[:firebase_auth] D:\Document\Project\fatmore\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
+65-->[:firebase_auth] D:\Document\Project\APP\fatmore\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
 66                android:value="com.google.firebase.components.ComponentRegistrar" />
-66-->[:firebase_auth] D:\Document\Project\fatmore\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+66-->[:firebase_auth] D:\Document\Project\APP\fatmore\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 67            <meta-data
-67-->[:cloud_firestore] D:\Document\Project\fatmore\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+67-->[:cloud_firestore] D:\Document\Project\APP\fatmore\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 68                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-68-->[:cloud_firestore] D:\Document\Project\fatmore\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-134
+68-->[:cloud_firestore] D:\Document\Project\APP\fatmore\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-134
 69                android:value="com.google.firebase.components.ComponentRegistrar" />
-69-->[:cloud_firestore] D:\Document\Project\fatmore\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+69-->[:cloud_firestore] D:\Document\Project\APP\fatmore\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 70            <meta-data
-70-->[:firebase_core] D:\Document\Project\fatmore\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
+70-->[:firebase_core] D:\Document\Project\APP\fatmore\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-11:85
 71                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-71-->[:firebase_core] D:\Document\Project\fatmore\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
+71-->[:firebase_core] D:\Document\Project\APP\fatmore\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:10:17-124
 72                android:value="com.google.firebase.components.ComponentRegistrar" />
-72-->[:firebase_core] D:\Document\Project\fatmore\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
+72-->[:firebase_core] D:\Document\Project\APP\fatmore\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:17-82
 73            <meta-data
 73-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\dell\.gradle\caches\transforms-3\7ccf0c7a2af9b6d9fb85b4fd3368b18e\transformed\jetified-firebase-auth-21.0.1\AndroidManifest.xml:77:13-79:85
 74                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
