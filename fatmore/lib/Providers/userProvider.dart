@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 
 class UserProvider with ChangeNotifier {
-  late final UserModel? currentData;
+  UserModel? currentData;
 
   addUserData({
     required User currentUser,
@@ -25,48 +25,80 @@ class UserProvider with ChangeNotifier {
     );
   }
 
-  StreamBuilder<QuerySnapshot<Object?>> userData(context) {
-    return StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection("usersData").snapshots(),
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (!snapshot.hasData) return Text("Loading data");
-          return Padding(
-            padding: const EdgeInsets.only(top: 90.0, left: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(snapshot.data!.docs[0]['userName']),
-                Text(snapshot.data!.docs[0]['userEmail'].toString())
-              ],
-            ),
-          );
-        });
-  }
-//   late UserModel _currentData;
+  // getUser(UserNotifier userNotifier) async {
+  //   QuerySnapshot snapshot =
+  //       await FirebaseFirestore.instance.collection('usersData').get();
+  //   List<UserData> _userLsit = [];
+  //   snapshot.docs.forEach((document) {
+  //     UserData user = UserData.fromMap(document.get(document));
+  //     _userLsit.add(user);
+  //   });
+  //   userNotifier.userList = _userLsit;
+  // }
+  //   getInfor() async {
+  //     UserModel userModel;
+  //     //var value = FirebaseAuth.instance.currentUser!;
+  //     try {
+  //       var value = await FirebaseFirestore.instance
+  //           .collection('usersData')
+  //           .doc(FirebaseAuth.instance.currentUser?.uid)
+  //           .get();
+  //       if (value.exists) {
+  //         userModel = UserModel(
+  //           userEmail: value.get("userEmail"),
+  //           // userImage: value.get("userImage"),
+  //           userName: value.get("userName"),
+  //           userUid: value.get("userUid"),
+  //         );
+  //       }
+  //     } catch (e) {
+  //       print("something went wrong");
+  //     }
+  //   }
+  // }
+  // StreamBuilder<QuerySnapshot<Object?>> userData(context) {
+  //   return StreamBuilder<QuerySnapshot>(
+  //       stream: FirebaseFirestore.instance.collection("usersData").snapshots(),
+  //       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+  //         if (!snapshot.hasData) return Text("Loading data");
+  //         return Padding(
+  //           padding: const EdgeInsets.only(top: 90.0, left: 20),
+  //           child: Column(
+  //             crossAxisAlignment: CrossAxisAlignment.start,
+  //             children: <Widget>[
+  //               Text(${snapshot.data!.docs['userName']}'),
+  //               Text(snapshot.data!.docs[0]['userEmail'].toString())
+  //             ],
+  //           ),
+  //         );
+//     //       });
+//   }
 //
-//   void getUserData() async {
-//     UserModel userModel;
-//     // UserModel currentData;
-//     var value = await FirebaseFirestore.instance
-//         .collection("usersData")
-//         .doc(FirebaseAuth.instance.currentUser?.displayName)
-//         .get();
-//     if (value.exists) {
-//       userModel = UserModel(
-//         userEmail: value.get("userEmail"),
-//         // userImage: value.get("userImage"),
-//         userName: value.get("userName"),
-//         userUid: value.get("userUid"),
+// //UserModel currentData;
+//     List<UserModel> userData = [];
+//
+//     getUserData() async {
+//       List<UserModel> newList = [];
+//       QuerySnapshot value =
+//       await FirebaseFirestore.instance.collection("usersData").get();
+//
+//       value.docs.forEach(
+//             (element) {
+//           UserModel userModel = UserModel(
+//             userName: element.get("userName"),
+//             userEmail: element.get("userEmail"),
+//             userUid: element.get("userUid"),
+//           );
+//           newList.add(userModel);
+//         },
 //       );
-//       _currentData = userModel;
+//       userData = newList;
 //       notifyListeners();
 //     }
-//   }
 //
-//   UserModel get currentUserData {
-//     return _currentData;
+//     List<UserModel> get  {
+//       return userData;
+//     }
 //   }
-// }
 
-//UserModel currentData;
 }

@@ -296,6 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
     foodProvider = Provider.of(
       context,
     );
+
     // userProvider = Provider.of(context);
     // userProvider.getUserData();
     return Scaffold(

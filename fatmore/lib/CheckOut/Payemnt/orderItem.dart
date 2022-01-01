@@ -14,12 +14,13 @@ class OrderItem extends StatelessWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            e.cartName,
-            style: TextStyle(
-              color: Colors.grey[600],
-            ),
-          ),
+          Text(e.cartName,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: "Poppins-Bold",
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold)),
+
           // // Text(
           //   e.cartUnit,
           //   style: TextStyle(
@@ -27,11 +28,22 @@ class OrderItem extends StatelessWidget {
           //   ),
           // ),
           Text(
-            "\$${e.cartPrice}",
+            "\LKR ${e.cartPrice}",
+            style: TextStyle(
+                color: Colors.grey[600],
+                fontFamily: "Poppins-Bold",
+                fontSize: 15,
+                fontWeight: FontWeight.bold),
           ),
         ],
       ),
-      subtitle: Text(e.cartQuantity.toString()),
+      subtitle: Text("\Quantity: ${e.cartQuantity}",
+          style: TextStyle(
+              color: Colors.grey[600],
+              fontFamily: "Poppins-Bold",
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 1.0)),
     );
   }
 }

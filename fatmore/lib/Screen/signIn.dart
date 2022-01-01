@@ -59,12 +59,14 @@ class _SignInScreenState extends State<SignInScreen> {
           : Column(
               children: <Widget>[
                 Expanded(
-                  flex: 4,
+                  flex: 2,
                   child: Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage("asset/images/food2.png"),
-                        fit: BoxFit.cover,
+                        alignment: Alignment.topRight,
+                        image:
+                            AssetImage("asset/images/popular/Nasi Goreng.png"),
+                        fit: BoxFit.contain,
                         //alignment: Alignment.bottomCenter,
                       ),
                     ),

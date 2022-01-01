@@ -1,3 +1,4 @@
+import 'package:fatmore/Model/deliveryAddressModel.dart';
 import 'package:fatmore/Providers/checkoutProvider.dart';
 import 'package:fatmore/Widget/CustomTextField.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,31 +17,57 @@ enum AddressTypes {
 }
 
 class _AddDeliveryAddressState extends State<AddDeliveryAddress> {
+  late CheckoutProvider checkoutProvider;
+  late DeliveryAddressModel value;
+  // bool isAddress = false;
+  late DeliveryAddressModel deliveryAddressModel;
   var myType = AddressTypes.Home;
+
+  @override
+  void initState() {
+    CheckoutProvider initcheckOutProvider = Provider.of(context, listen: false);
+    initcheckOutProvider.getDeliveryAddressData();
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    CheckoutProvider checkoutProvider = Provider.of(context);
+    checkoutProvider = Provider.of<CheckoutProvider>(context);
+    checkoutProvider.getDeliveryAddressData();
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
+        backgroundColor: Colors.white,
         title: Text(
           "Add Delivery Address",
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(
+              fontSize: 18,
+              color: Colors.black,
+              fontFamily: "Poppins-Bold",
+              fontWeight: FontWeight.bold,
+              letterSpacing: 0.5),
         ),
       ),
       bottomNavigationBar: Container(
         margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         height: 48,
         child: checkoutProvider.isloadding == false
+            // checkoutProvider.getDeliveryAddressList.isEmpty
             ? MaterialButton(
+                // checkoutProvider.getDeliveryAddressList.isEmpty
                 onPressed: () {
+                  // if (checkoutProvider.getDeliveryAddressList.isEmpty) {
                   checkoutProvider.validator(context, myType);
+                  // }
                 },
-                child: Text(
-                  "Add Address",
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
+                child: Text("Add Address",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontFamily: "Poppins-Bold",
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 0.5)),
                 color: Colors.deepOrange,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(
@@ -90,10 +117,10 @@ class _AddDeliveryAddressState extends State<AddDeliveryAddress> {
               labText: "City",
               controller: checkoutProvider.city,
             ),
-            CustomTextField(
-              labText: "Area",
-              controller: checkoutProvider.area,
-            ),
+            // CustomTextField(
+            //   labText: "Area",
+            //   controller: checkoutProvider.area,
+            // ),
             CustomTextField(
               labText: "Pincode",
               controller: checkoutProvider.pincode,
@@ -124,12 +151,28 @@ class _AddDeliveryAddressState extends State<AddDeliveryAddress> {
             //   color: Colors.black,
             // ),
             ListTile(
-              title: Text("Address Type*"),
+              title: Text(
+                "Address Type*",
+                style: TextStyle(
+                    fontFamily: "Poppins-Bold",
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.5,
+                    color: Colors.grey),
+              ),
             ),
             RadioListTile(
+              activeColor: Colors.deepOrange,
               value: AddressTypes.Home,
               groupValue: myType,
-              title: Text("Home"),
+              title: Text(
+                "Home",
+                style: TextStyle(
+                    fontFamily: "Poppins-Bold",
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.5),
+              ),
               onChanged: (AddressTypes? value) {
                 setState(() {
                   myType = value!;
@@ -137,13 +180,21 @@ class _AddDeliveryAddressState extends State<AddDeliveryAddress> {
               },
               secondary: Icon(
                 Icons.home,
-                color: Colors.grey,
+                color: Colors.deepOrange,
               ),
             ),
             RadioListTile(
+              activeColor: Colors.deepOrange,
               value: AddressTypes.Work,
               groupValue: myType,
-              title: Text("Work"),
+              title: Text(
+                "Work",
+                style: TextStyle(
+                    fontFamily: "Poppins-Bold",
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.5),
+              ),
               onChanged: (AddressTypes? value) {
                 setState(() {
                   myType = value!;
@@ -151,13 +202,21 @@ class _AddDeliveryAddressState extends State<AddDeliveryAddress> {
               },
               secondary: Icon(
                 Icons.work,
-                color: Colors.grey,
+                color: Colors.deepOrange,
               ),
             ),
             RadioListTile(
+              activeColor: Colors.deepOrange,
               value: AddressTypes.Other,
               groupValue: myType,
-              title: Text("Other"),
+              title: Text(
+                "Other",
+                style: TextStyle(
+                    fontFamily: "Poppins-Bold",
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.5),
+              ),
               onChanged: (AddressTypes? value) {
                 setState(() {
                   myType = value!;
@@ -165,7 +224,7 @@ class _AddDeliveryAddressState extends State<AddDeliveryAddress> {
               },
               secondary: Icon(
                 Icons.devices_other,
-                color: Colors.grey,
+                color: Colors.deepOrange,
               ),
             )
           ],

@@ -21,7 +21,7 @@ class SkipScreen extends StatelessWidget {
               dotSize: 7,
               images: [
                 AssetImage("asset/images/food.png"),
-                AssetImage("asset/images/skipScreen/imageslider1.jpg"),
+                AssetImage("asset/images/skipScreen/food1.png"),
                 AssetImage("asset/images/skipScreen/imageslider3.jpg"),
               ],
             ),

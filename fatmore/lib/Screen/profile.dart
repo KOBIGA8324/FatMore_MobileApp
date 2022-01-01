@@ -1,5 +1,4 @@
 import 'package:fatmore/CheckOut/AddDeliveryDetails/addDelivery_addreese.dart';
-import 'package:fatmore/DatabaseManager/databaseManager.dart';
 import 'package:fatmore/Screen/review_cart.dart';
 import 'package:fatmore/Widget/drawerSide.dart';
 import 'package:flutter/cupertino.dart';
@@ -109,7 +108,7 @@ class _ProfileState extends State<Profile> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  DatabaseManager(),
+                                  // DatabaseManager(),
                                 ],
                               ),
                               CircleAvatar(
@@ -134,7 +133,7 @@ class _ProfileState extends State<Profile> {
                         onTap: () {
                           Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
-                                  builder: (ctx) => HomeScreen()));
+                                  builder: (ctx) => ReviewCart()));
                         },
                         title: ("My Order"),
                         iconData: Icons.shop_outlined),
@@ -142,15 +141,15 @@ class _ProfileState extends State<Profile> {
                         onTap: () {
                           Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
-                                  builder: (ctx) => ReviewCart()));
+                                  builder: (ctx) => AddDeliveryAddress()));
                         },
                         title: ("My Delivery Address"),
                         iconData: Icons.location_on_outlined),
                     listTile(
                         onTap: () {
-                          Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                  builder: (ctx) => AddDeliveryAddress()));
+                          // Navigator.of(context).pushReplacement(
+                          //     MaterialPageRoute(
+                          //         builder: (ctx) => AddDeliveryAddress()));
                         },
                         title: ("Refer A Friends"),
                         iconData: Icons.person_outline_outlined),

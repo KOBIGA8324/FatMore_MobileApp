@@ -41,6 +41,7 @@ class _DeliveryDetailsState extends State<DeliveryDetails> {
     deliveryAddressProvider.getDeliveryAddressData();
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         leading: IconButton(
           onPressed: () {
             Navigator.push(
@@ -56,7 +57,7 @@ class _DeliveryDetailsState extends State<DeliveryDetails> {
         title: Text(
           "Delivery Details",
           style: TextStyle(
-              color: Colors.deepOrange,
+              color: Colors.black,
               fontFamily: "Poppins-Bold",
               fontSize: 20,
               fontWeight: FontWeight.bold),
@@ -73,7 +74,8 @@ class _DeliveryDetailsState extends State<DeliveryDetails> {
         backgroundColor: Colors.deepOrange,
         child: Icon(
           Icons.add,
-          color: Colors.black,
+          size: 20,
+          color: Colors.white,
         ),
       ),
       bottomNavigationBar: Container(
@@ -87,9 +89,21 @@ class _DeliveryDetailsState extends State<DeliveryDetails> {
           child: deliveryAddressProvider.getDeliveryAddressList.isEmpty
               ? Text(
                   "Add New Address",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: "Poppins-Bold",
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 0.5),
                 )
               : Text(
-                  "payment summary",
+                  "Payment summary",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontFamily: "Poppins-Bold",
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 0.5),
                 ),
           onPressed: () {
             deliveryAddressProvider.getDeliveryAddressList.isEmpty
@@ -111,20 +125,40 @@ class _DeliveryDetailsState extends State<DeliveryDetails> {
       body: ListView(
         children: [
           ListTile(
-            title: Text("Deliver To"),
-            leading: Image.asset("asset/images/location.png"),
+            title: Text(
+              "Deliver To",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: "Poppins-Bold",
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0.5),
+            ),
+            leading: Icon(
+              Icons.location_on,
+              color: Colors.deepOrange,
+            ),
+            // leading: Image.asset("asset/images/location.png",),
           ),
           SizedBox(
-            height: 5,
+            height: 10,
           ),
           Divider(
             height: 1,
           ),
           deliveryAddressProvider.getDeliveryAddressList.isEmpty
               ? Padding(
-                  padding: const EdgeInsets.only(top: 80.0),
+                  padding: const EdgeInsets.only(top: 180.0),
                   child: Center(
-                    child: Text("No Data"),
+                    child: Text(
+                      "NO DATA ",
+                      style: TextStyle(
+                          color: Colors.deepOrange,
+                          fontFamily: "Poppins-Bold",
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 0.5),
+                    ),
                   ),
                 )
               : Column(
@@ -134,8 +168,8 @@ class _DeliveryDetailsState extends State<DeliveryDetails> {
                       value = e;
                     });
                     return SingleDeliveryItem(
-                      address:
-                          "area, ${e.area}, street, ${e.street},  pincode ${e.pinCode}",
+                      address1: "Street: ${e.street},  City: ${e.city}",
+                      address2: "Pincode: ${e.pinCode}",
                       title: "${e.firstName} ${e.lastName}",
                       number: e.mobileNo,
                       addressType: e.addressType == "AddressTypes.Home"

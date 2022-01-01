@@ -242,7 +242,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   //   width: 100,
                   // ),
                   Text(
-                    "\$${widget.price}",
+                    "\LKR ${widget.price}",
                     style: TextStyle(
                       color: Colors.deepOrangeAccent,
                       fontWeight: FontWeight.bold,

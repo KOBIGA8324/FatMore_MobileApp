@@ -107,6 +107,7 @@ flutter:
     - asset/images/skipScreen/imageslider1.jpg
     - asset/images/skipScreen/imageslider2.jpg
     - asset/images/skipScreen/imageslider3.jpg
+    - asset/images/skipScreen/food1.png
     - asset/images/background.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

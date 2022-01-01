@@ -1,3 +1,4 @@
+import 'package:fatmore/CheckOut/deliveryDeatils.dart';
 import 'package:fatmore/Model/deliveryAddressModel.dart';
 import 'package:fatmore/Providers/checkoutProvider.dart';
 import 'package:fatmore/Providers/review_cart_provider.dart';
@@ -54,19 +55,45 @@ class _PaymentSummaryState extends State<PaymentSummary> {
 
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (_) => DeliveryDetails()));
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Colors.white,
         title: Text(
           "Payment Summary",
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(
+              fontSize: 18,
+              color: Colors.black,
+              fontFamily: "Poppins-Bold",
+              fontWeight: FontWeight.bold,
+              letterSpacing: 0.5),
         ),
       ),
       bottomNavigationBar: ListTile(
-        title: Text("Total Amount"),
+        title: Text(
+          "Total Amount",
+          style: TextStyle(
+              fontSize: 18,
+              color: Colors.black,
+              fontFamily: "Poppins-Bold",
+              fontWeight: FontWeight.bold,
+              letterSpacing: 0.5),
+        ),
         subtitle: Text(
-          "\$${total}",
+          "\LKR ${total}",
           style: TextStyle(
             color: Colors.green[900],
             fontWeight: FontWeight.bold,
-            fontSize: 17,
+            fontFamily: "Poppins-Bold",
+            fontSize: 16,
           ),
         ),
         trailing: Container(
@@ -80,8 +107,9 @@ class _PaymentSummaryState extends State<PaymentSummary> {
             child: Text(
               "Pleace Order",
               style: TextStyle(
-                color: Colors.black,
-              ),
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Poppins-Bold"),
             ),
             color: Colors.deepOrange,
             shape: RoundedRectangleBorder(
@@ -98,8 +126,9 @@ class _PaymentSummaryState extends State<PaymentSummary> {
             return Column(
               children: [
                 SingleDeliveryItem(
-                  address:
-                      "area, ${widget.deliveryAddressList.area}, street, ${widget.deliveryAddressList.street},  pincode ${widget.deliveryAddressList.pinCode}",
+                  address1:
+                      "Street: ${widget.deliveryAddressList.street}, City: ${widget.deliveryAddressList.city}",
+                  address2: "Pincode: ${widget.deliveryAddressList.pinCode}",
                   title:
                       "${widget.deliveryAddressList.firstName} ${widget.deliveryAddressList.lastName}",
                   number: widget.deliveryAddressList.mobileNo,
@@ -111,7 +140,7 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                           ? "Other"
                           : "Work",
                 ),
-                Divider(),
+
                 ExpansionTile(
                   children:
                       reviewCartProvider.getReviewCartDataList.map((data) {
@@ -120,7 +149,12 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                     );
                   }).toList(),
                   title: Text(
-                      "Order Items ${reviewCartProvider.getReviewCartDataList.length}"),
+                    "Order Items ${reviewCartProvider.getReviewCartDataList.length}",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Poppins-Bold"),
+                  ),
                 ),
                 Divider(),
                 ListTile(
@@ -128,24 +162,28 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                   leading: Text(
                     "Sub Total",
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Poppins-Bold"),
                   ),
                   trailing: Text(
-                    "\$${totalPrice}",
+                    "\LKR ${totalPrice}",
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "Poppins-Bold"),
                   ),
                 ),
+
                 ListTile(
                   minVerticalPadding: 5,
                   leading: Text(
                     "Shipping Charge",
-                    style: TextStyle(color: Colors.grey[600]),
+                    style: TextStyle(
+                        color: Colors.grey[600], fontFamily: "Poppins-Bold"),
                   ),
                   trailing: Text(
-                    "\$${shippingChanrge}",
+                    "\LKR ${shippingChanrge}",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -154,11 +192,12 @@ class _PaymentSummaryState extends State<PaymentSummary> {
                 ListTile(
                   minVerticalPadding: 5,
                   leading: Text(
-                    "Compen Discount",
-                    style: TextStyle(color: Colors.grey[600]),
+                    "Discount",
+                    style: TextStyle(
+                        color: Colors.grey[600], fontFamily: "Poppins-Bold"),
                   ),
                   trailing: Text(
-                    "\$${discount}",
+                    "\LKR ${discount}",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),

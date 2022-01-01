@@ -1,4 +1,5 @@
 import 'package:fatmore/DatabaseManager/databaseManager.dart';
+import 'package:fatmore/Providers/userProvider.dart';
 import 'package:fatmore/Screen/about.dart';
 import 'package:fatmore/Screen/contact.dart';
 import 'package:fatmore/Screen/homeScreen.dart';
@@ -10,15 +11,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DrawerSide extends StatefulWidget {
+  late UserProvider userProvider;
+  late final String uid;
   //final UserProvider userProvider;
   // const DrawerSide({required this.userProvider});
-//  @override
+  @override
   _DrawerSideState createState() => _DrawerSideState();
 }
 
 class _DrawerSideState extends State<DrawerSide> {
-  //late UserProvider userProvider;
-
   Widget listTile(
       {required String title,
       required IconData iconData,
@@ -44,32 +45,6 @@ class _DrawerSideState extends State<DrawerSide> {
     );
   }
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _getUserData();
-  // }
-  //
-  // void _getUserData() async {
-  //   UserModel userModel;
-  //   // var value = FirebaseAuth.instance.currentUser!;
-  //   try {
-  //     var value = await FirebaseFirestore.instance
-  //         .collection('usersData')
-  //         .doc(FirebaseAuth.instance.currentUser?.uid)
-  //         .get();
-  //     if (value.exists) {
-  //       userModel = UserModel(
-  //         userEmail: value.get("userEmail"),
-  //         // userImage: value.get("userImage"),
-  //         userName: value.get("userName"),
-  //         userUid: value.get("userUid"),
-  //       );
-  //     }
-  //   } catch (e) {
-  //     print("something went wrong");
-  //   }
-  // }
   // Widget userData(context) {
   //   return StreamBuilder<QuerySnapshot>(
   //       stream: FirebaseFirestore.instance.collection("usersData").snapshots(),
@@ -87,9 +62,36 @@ class _DrawerSideState extends State<DrawerSide> {
   //         );
   //       });
   // }
+  // @override
+  // void initState() {
+  //   UserNotifier userNotifier = Provider.of(context, listen: false);
+  //   UserProvider userProvider = Provider.of(context, listen: false);
+  //   userProvider.getUser(userNotifier);
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
+    // UserNotifier userNotifier = Provider.of<UserNotifier>(context);
+    // userProvider = Provider.of<UserProvider>(context);
+    // final user = Provider.of<UserProvider>(context);
+    // final uid = user.currentData?.userUid;
+    // // final user=FirebaseAuth.instance.currentUser?.uid;
+    //
+    // DatabaseManager databaseManager = DatabaseManager(
+    //   uid: '$uid',
+    // );
+    // data() async {
+    //   dynamic names = await databaseManager.getCurrentUserData();
+    //   if (names != null) {
+    //     setState(() {
+    //       userName = names[0];
+    //       print(userName);
+    //       userEmail = names[1];
+    //     });
+    //   }
+    // }
+
     return Drawer(
       backgroundColor: Colors.white,
       child: Container(
@@ -112,9 +114,8 @@ class _DrawerSideState extends State<DrawerSide> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(top: 80, left: 30),
                   child: DatabaseManager(),
-                ),
+                )
               ]),
             )),
             // UserAccountsDrawerHeader(

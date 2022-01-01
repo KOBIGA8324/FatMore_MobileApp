@@ -7,13 +7,13 @@ class DeliveryAddressModel {
   String street;
   String landMark;
   String city;
-  String area;
+  // String area;
   String pinCode;
   String addressType;
 
   DeliveryAddressModel({
     required this.addressType,
-    required this.area,
+    // required this.area,
     required this.alternateMobileNo,
     required this.city,
     required this.firstName,

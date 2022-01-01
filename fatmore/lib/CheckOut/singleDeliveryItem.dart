@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 
 class SingleDeliveryItem extends StatelessWidget {
   final String title;
-  final String address;
+  final String address1;
+  final String address2;
   final String number;
   final String addressType;
   SingleDeliveryItem(
       {required this.title,
       required this.addressType,
-      required this.address,
+      required this.address1,
+      required this.address2,
       required this.number});
 
   @override
@@ -24,18 +26,18 @@ class SingleDeliveryItem extends StatelessWidget {
               Container(
                 width: 60,
                 padding: EdgeInsets.all(1),
-                height: 20,
+                height: 30,
                 decoration: BoxDecoration(
                     color: Colors.deepOrange,
                     borderRadius: BorderRadius.circular(10)),
                 child: Center(
-                  child: Text(
-                    addressType,
-                    style: TextStyle(
-                      fontSize: 13,
-                      color: Colors.black,
-                    ),
-                  ),
+                  child: Text(addressType,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: "Poppins-Bold",
+                          fontSize: 12,
+                          fontWeight: FontWeight.normal,
+                          letterSpacing: 0.5)),
                 ),
               ),
             ],
@@ -48,11 +50,33 @@ class SingleDeliveryItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(address),
-              SizedBox(
-                height: 5,
+              Text(
+                address1,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: "Poppins-Bold",
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
+                    letterSpacing: 0.5),
               ),
-              Text(number),
+              Text(
+                address2,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: "Poppins-Bold",
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
+                    letterSpacing: 0.5),
+              ),
+              Text(
+                number,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: "Poppins-Bold",
+                    fontSize: 15,
+                    fontWeight: FontWeight.normal,
+                    letterSpacing: 0.5),
+              ),
             ],
           ),
         ),

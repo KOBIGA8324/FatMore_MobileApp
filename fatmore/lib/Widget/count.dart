@@ -85,15 +85,15 @@ class _CountState extends State<Count> {
                   child: Icon(
                     Icons.remove,
                     size: 15,
-                    color: Color(0xffd0b84c),
+                    color: Colors.deepOrange,
                   ),
                 ),
                 Text(
                   "$count",
                   style: TextStyle(
-                    color: Color(0xffd0b84c),
-                    fontWeight: FontWeight.bold,
-                  ),
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Poppins-Bold"),
                 ),
                 InkWell(
                   onTap: () {
@@ -108,11 +108,7 @@ class _CountState extends State<Count> {
                       cartQuantity: count,
                     );
                   },
-                  child: Icon(
-                    Icons.add,
-                    size: 15,
-                    color: Color(0xffd0b84c),
-                  ),
+                  child: Icon(Icons.add, size: 15, color: Colors.deepOrange),
                 ),
               ],
             )
@@ -133,7 +129,12 @@ class _CountState extends State<Count> {
                 },
                 child: Text(
                   "ADD",
-                  style: TextStyle(color: Colors.deepOrange),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "Poppins-Bold",
+                      fontSize: 14,
+                      letterSpacing: 1.0,
+                      color: Colors.deepOrange),
                 ),
               ),
             ),

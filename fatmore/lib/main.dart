@@ -1,4 +1,5 @@
 import 'package:fatmore/Providers/food_provider.dart';
+import 'package:fatmore/splashScreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,16 +9,11 @@ import 'Providers/checkoutProvider.dart';
 import 'Providers/review_cart_provider.dart';
 import 'Providers/userProvider.dart';
 import 'Providers/wishListProvider.dart';
-import 'Screen/homeScreen.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  //////WidgetsFlutterBinding.ensureInitialized();
 
-  //await Firebase.initializeApp(
-  //options: DefaultFirebaseOptions.currentPlatform,
-  // );
   runApp(MyApp());
 }
 
@@ -44,8 +40,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<BreakfastFoodProvider>(
           create: (context) => BreakfastFoodProvider(),
         ),
+        // ChangeNotifierProvider<UserNotifier>(
+        //   create: (context) => UserNotifier(),
+        // ),
       ],
-      child: MaterialApp(home: HomeScreen(), debugShowCheckedModeBanner: false),
+      child:
+          MaterialApp(home: SplashScreen(), debugShowCheckedModeBanner: false),
     ); // define it once at root level.
   }
 }

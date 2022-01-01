@@ -16,7 +16,7 @@ class CheckoutProvider with ChangeNotifier {
   TextEditingController street = TextEditingController();
   TextEditingController landmark = TextEditingController();
   TextEditingController city = TextEditingController();
-  TextEditingController area = TextEditingController();
+//  TextEditingController area = TextEditingController();
   TextEditingController pincode = TextEditingController();
   TextEditingController setLocation = TextEditingController();
 
@@ -39,8 +39,8 @@ class CheckoutProvider with ChangeNotifier {
       Fluttertoast.showToast(msg: "landmark is empty");
     } else if (city.text.isEmpty) {
       Fluttertoast.showToast(msg: "city is empty");
-    } else if (area.text.isEmpty) {
-      Fluttertoast.showToast(msg: "area is empty");
+      // } else if (area.text.isEmpty) {
+      //   Fluttertoast.showToast(msg: "area is empty");
     } else if (pincode.text.isEmpty) {
       Fluttertoast.showToast(msg: "pincode is empty");
       // } else if (setLoaction == null) {
@@ -60,7 +60,7 @@ class CheckoutProvider with ChangeNotifier {
         "street": street.text,
         "landmark": landmark.text,
         "city": city.text,
-        "area": area.text,
+        //"area": area.text,
         "pincode": pincode.text,
         "addressType": myType.toString(),
         // "longitude": setLoaction.longitude,
@@ -89,7 +89,7 @@ class CheckoutProvider with ChangeNotifier {
           firstName: element.get("firstname"),
           lastName: element.get("lastname"),
           addressType: element.get("addressType"),
-          area: element.get("area"),
+          //area: element.get("area"),
           alternateMobileNo: element.get("alternateMobileNo"),
           city: element.get("city"),
           landMark: element.get("landmark"),
