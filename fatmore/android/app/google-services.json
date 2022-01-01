@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "574469502347",
+    "firebase_url": "https://fireauth-b76d7-default-rtdb.firebaseio.com",
     "project_id": "fireauth-b76d7",
     "storage_bucket": "fireauth-b76d7.appspot.com"
   },
@@ -14,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "574469502347-529i5l12smtu52ff0dujuk3e09hm1v0g.apps.googleusercontent.com",
+          "client_id": "574469502347-b7aviu1ke8mpvreasoiahume48s0f8q8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.fatmore",

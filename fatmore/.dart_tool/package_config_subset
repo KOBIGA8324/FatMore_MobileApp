@@ -78,6 +78,10 @@ flutter_svg
 2.12
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-1.0.0/
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-1.0.0/lib/
+fluttertoast
+2.12
+file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.0.8/
+file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.0.8/lib/
 http_parser
 2.12
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0/
@@ -128,8 +132,8 @@ file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.0.2/lib/
 provider
 2.12
-file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.1/
-file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.1/lib/
+file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.2/
+file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.2/lib/
 source_span
 2.12
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.1/
@@ -184,6 +188,6 @@ file:///C:/flutter/packages/flutter_web_plugins/
 file:///C:/flutter/packages/flutter_web_plugins/lib/
 fatmore
 2.15
-file:///D:/Document/Project/fatmore/
-file:///D:/Document/Project/fatmore/lib/
+file:///D:/Document/Project/APP/fatmore/
+file:///D:/Document/Project/APP/fatmore/lib/
 2
